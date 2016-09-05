@@ -12,13 +12,16 @@ function CheckboxWidget({
 }) {
   return (
     <div className={`checkbox ${disabled ? "disabled" : ""}`}>
-      <label>
+      <label className="toggle">
         <input type="checkbox"
           id={id}
           checked={typeof value === "undefined" ? false : value}
           required={required}
           disabled={disabled}
           onChange={(event) => onChange(event.target.checked)} />
+         <div className="track">
+     <div className="handle"></div>
+   </div> 
         <strong>{label}</strong>
       </label>
     </div>

@@ -101,6 +101,7 @@ class FileWidget extends Component {
         <p>
           <input
             id={id}
+            className="button button-outline button-positive"
             type="file"
             disabled={readonly || disabled}
             onChange={this.onChange}

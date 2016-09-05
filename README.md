@@ -50,7 +50,6 @@ A [live playground](https://mozilla-services.github.io/react-jsonschema-form/) i
      - [Custom field components](#custom-field-components)
         - [Field props](#field-props)
         - [The registry object](#the-registry-object)
-        - [The formContext object](#the-formcontext-object)
      - [Custom SchemaField](#custom-schemafield)
      - [Custom titles](#custom-titles)
      - [Custom descriptions](#custom-descriptions)
@@ -85,10 +84,10 @@ $ npm install react-jsonschema-form --save
 ### As a script served from a CDN
 
 ```html
-  <script src="https://unpkg.com/react-jsonschema-form/dist/react-jsonschema-form.js"></script>
+  <script src="https://npmcdn.com/react-jsonschema-form/dist/react-jsonschema-form.js"></script>
 ```
 
-Source maps are available at [this url](https://unpkg.com/react-jsonschema-form/dist/react-jsonschema-form.js.map).
+Source maps are available at [this url](https://npmcdn.com/react-jsonschema-form/dist/react-jsonschema-form.js.map).
 
 > Note: The CDN version **does not** embed *react* nor *react-dom*.
 >
@@ -593,7 +592,6 @@ The following props are passed to a custom field template component:
 - `required`: A boolean value stating if the field is required;
 - `readonly`: A boolean value stating if the field is read-only;
 - `displayLabel`: A boolean value stating if the label should be rendered or not. This is useful for nested fields in arrays where you don't want to clutter the UI.
-- `formContext`: The `formContext` object that you passed to Form.
 
 > Note: you can only define a single field template for a form. If you need many, it's probably time to look for [custom fields](#custom-field-components) instead.
 
@@ -645,7 +643,6 @@ The following props are passed to custom widget components:
 - `readonly`: `true` if the widget is read-only;
 - `onChange`: The value change event handler; call it with the new value everytime it changes;
 - `options`: A map of options passed as a prop to the component (see [Custom widget options](#custom-widget-options)).
-- `formContext`: The `formContext` object that you passed to Form.
 
 > Note: Prior to v0.35.0, the `options` prop contained the list of options (`label` and `value`) for `enum` fields. Since v0.35.0, it now exposes this list as the `enumOptions` property within the `options` object.
 
@@ -772,7 +769,7 @@ render((
 ), document.getElementById("app"));
 ```
 
-> Note: Registered fields can be reused across the entire schema.
+> Note: Registered fields can be reused accross the entire schema.
 
 #### Field props
 
@@ -784,7 +781,6 @@ A field component will always be passed the following props:
  - `formData`: The data for this field;
  - `errorSchema`: The tree of errors for this field and its children;
  - `registry`: A [registry](#the-registry-object) object (read next).
- - `formContext`: A [formContext](#the-formcontext-object) object (read next next).
 
 #### The `registry` object
 
@@ -793,13 +789,8 @@ The `registry` is an object containing the registered custom fields and widgets 
  - `fields`: The [custom registered fields](#custom-field-components). By default this object contains the standard `SchemaField`, `TitleField` and `DescriptionField` components;
  - `widgets`: The [custom registered widgets](#custom-widget-components), if any;
  - `definitions`: The root schema [definitions](#schema-definitions-and-references), if any.
- - `formContext`: The [formContext](#the-formcontext-object) object.
 
 The registry is passed down the component tree, so you can access it from your custom field and `SchemaField` components.
-
-#### The `formContext` object
-
-You can provide a `formContext` object to the Form, which is passed down to all fields and widgets (including [TitleField](#custom-titles) and [DescriptionField](#custom-descriptions)). Useful for implementing context aware fields and widgets.
 
 ### Custom SchemaField
 

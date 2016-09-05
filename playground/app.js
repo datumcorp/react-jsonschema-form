@@ -147,12 +147,12 @@ class GeoPosition extends Component {
         <div className="row">
           <div className="col-sm-6">
             <label>Latitude</label>
-            <input className="form-control" type="number" value={lat} step="0.00001"
+            <input className="item item-input" type="number" value={lat} step="0.00001"
               onChange={this.onChange("lat")} />
           </div>
           <div className="col-sm-6">
             <label>Longitude</label>
-            <input className="form-control" type="number" value={lon} step="0.00001"
+            <input className="item item-input" type="number" value={lon} step="0.00001"
               onChange={this.onChange("lon")} />
           </div>
         </div>
@@ -226,7 +226,7 @@ class Selector extends Component {
 
   render() {
     return (
-      <ul className="nav nav-pills">{
+      <ul className="nav nav-pills button-bar">{
         Object.keys(samples).map((label, i) => {
           return (
             <li key={i} role="presentation"
@@ -318,9 +318,9 @@ class App extends Component {
     } = this.state;
 
     return (
-      <div className="container-fluid">
+      <div className="">
         <div className="page-header">
-          <h1>react-jsonschema-form</h1>
+          <h1 className="">react-jsonschema-form</h1>
           <div className="row">
             <div className="col-sm-8">
               <Selector onSelected={this.load} />
@@ -335,20 +335,29 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="col-sm-7">
-          <Editor title="JSONSchema" theme={editor} code={toJson(schema)}
-            onChange={this.onSchemaEdited} />
-          <div className="row">
-            <div className="col-sm-6">
+        
+
+
+
+        <div className="row">
+            <div class="col col-50">
+              <Editor title="JSONSchema" theme={editor} code={toJson(schema)}
+              onChange={this.onSchemaEdited} />
+            </div>
+            <div class="col col-25">
               <Editor title="UISchema" theme={editor} code={toJson(uiSchema)}
                 onChange={this.onUISchemaEdited} />
             </div>
-            <div className="col-sm-6">
+            <div class="col col-25">
               <Editor title="formData" theme={editor} code={toJson(formData)}
                 onChange={this.onFormDataEdited} />
             </div>
-          </div>
         </div>
+        
+
+
+
+
         <div className="col-sm-5">
           {!this.state.form ? null :
             <Form

@@ -18,7 +18,6 @@ if (process.env.NODE_ENV !== "production") {
     onChange: PropTypes.func.isRequired,
     formData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     required: PropTypes.bool,
-    formContext: PropTypes.object.isRequired,
   };
 }
 

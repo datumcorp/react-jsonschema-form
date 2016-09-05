@@ -132,7 +132,6 @@ export default class Form extends Component {
       FieldTemplate: this.props.FieldTemplate,
       widgets: this.props.widgets || {},
       definitions: this.props.schema.definitions || {},
-      formContext: this.props.formContext || {},
     };
   }
 
@@ -156,7 +155,7 @@ export default class Form extends Component {
     const _SchemaField = registry.fields.SchemaField;
 
     return (
-      <form className={className ? className : "rjsf"}
+      <form className={className ? className : ""}
         id={id}
         name={name}
         method={method}
@@ -178,7 +177,7 @@ export default class Form extends Component {
           safeRenderCompletion={safeRenderCompletion} />
         { children ? children :
           <p>
-            <button type="submit" className="btn btn-info">Submit</button>
+            <button type="submit" className="button button-positive button-block">Submit</button>
           </p> }
       </form>
     );
@@ -212,6 +211,7 @@ if (process.env.NODE_ENV !== "production") {
     noValidate: PropTypes.bool,
     liveValidate: PropTypes.bool,
     safeRenderCompletion: PropTypes.bool,
-    formContext: PropTypes.object,
   };
 }
+
+export default Form;

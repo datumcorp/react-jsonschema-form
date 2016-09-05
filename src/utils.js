@@ -82,7 +82,6 @@ export function getDefaultRegistry() {
     },
     widgets: {},
     definitions: {},
-    formContext: {}
   };
 }
 

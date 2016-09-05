@@ -29,14 +29,25 @@ module.exports = {
     }
   },
   uiSchema: {
+
+    firstName: {
+      "ui:placeholder": "Chuck"
+    },
+
+    lastName: {
+      "ui:placeholder": "Norris"
+    },
+
     age: {
       "ui:widget": "updown"
     },
     bio: {
-      "ui:widget": "textarea"
+      "ui:widget": "textarea",
+      "ui:placeholder": "Roundhouse kicking asses since 1940"
     },
     password: {
       "ui:widget": "password",
+      "ui:placeholder": "No",
       "ui:help": "Hint: Make it strong!"
     },
     date: {
@@ -44,10 +55,10 @@ module.exports = {
     }
   },
   formData: {
-    firstName: "Chuck",
-    lastName: "Norris",
+    firstName: "",
+    lastName: "",
     age: 75,
-    bio: "Roundhouse kicking asses since 1940",
-    password: "noneed"
+    bio: "",
+    password: ""
   }
 };

@@ -1,14 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="autome">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<style>
+
+  .titleionic {
+
+     display: block;
+color: #333;
+/*border: 0;
+border-bottom: 1px solid #e5e5e5;*/
+box-sizing: border-box;
+
+  }
+
+  .inputionic {
+
+      border: 0;
+      width: 60%;
+          display: block;
+    padding-top: 2px;
+    padding-left: 2px;
+    height: 34px;
+    color: #ddd;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 0;
+    flex: 1 220px;
+    -moz-appearance: none;
+    margin: 0;
+padding-right: 2px;
+background-color: transparent;
+outline: 0;
+font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+font-weight: normal;
+outline-offset: 0;
+background-image: none;
+box-sizing: border-box;
+overflow:auto;
+/*border-bottom: 1px solid #ddd;*/
+
+}
+
+  .inputionic:focus {
+
+    border: 1px solid;
+      /*width: 60%;*/
+          display: block;
+    padding-top: 2px;
+    padding-left: 2px;
+    height: 34px;
+    color: #111;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 0;
+    flex: 1 220px;
+    -moz-appearance: none;
+    margin: 0;
+padding-right: 24px;
+background-color: transparent;
+outline: 0;
+font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+font-weight: normal;
+outline-offset: 0;
+background-image: none;
+box-sizing: border-box;
+overflow:auto;
+border-color: #66afe9;
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+
+  }
+
+   .descriptionionic {
+
+    display: block;
+padding: 4px 0 0 0px;
+vertical-align: middle;
+max-width: 200px;
+width: 35%;
+color: #444;
+font-size: 14px;
+margin: 0;
+border: 0;
+box-sizing: border-box;
+white-space: nowrap;
+
+   }
+
+   .labelionic {
+
+      display: inline-block;
+padding: 4px 0 0 0px;
+vertical-align: middle;
+max-width: 200px;
+width: 35%;
+color: #444;
+font-size: 16px;
+font-weight: 700;
+margin: 0;
+border: 0;
+box-sizing: border-box;
+white-space: nowrap;
+
+  }
+
+  .helpionic {
+
+    display: block;
+margin-top: 5px;
+margin-bottom: 10px;
+color: #ddd;
+margin: 0 0 10px;
+box-sizing: border-box;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+
+  }
+
+  .helpionic:hover {
+
+    color: #737373;
+
+  }
+
+  .dangerionic {
+
+    color: #D8000C;
+background-color: #FFBABA;
+margin: 10px 0;
+padding: 12px;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+
+  }
+
+  .buttonionic {
+
+    flex: 1 1 0%;
+padding-left: 6px;
+padding-right: 6px;
+font-weight: bold;
+border-radius: 0;
+    margin-left: -1px;
+    z-index: 2;
+color: #333;
+background-color: transparent;
+border-color: #ccc;
+text-decoration: none;
+outline-offset: -2px;
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+-moz-user-select: none;
+background-image: none;
+border: 1px solid transparent;
+overflow: visible;
+box-sizing: border-box;
+
+  }
+
+  .buttongroup {
+
+    display: inline-block;
+min-height: 1px;
+padding-right: 15px;
+padding-left: 15px;
+box-sizing: border-box;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+
+  }
+
+  .buttonsubmit {
+
+    margin-top: 0;
+    border-color: #0c60ee;
+background-color: #387ef5;
+color: #fff;
+margin-bottom: 10px;
+width: 100%;
+outline: 0;
+display: block;
+clear: both;
+position: relative;
+margin: 0;
+padding: 0 12px;
+min-width: 52px;
+min-height: 47px;
+border-width: 1px;
+border-style: solid;
+border-radius: 2px;
+vertical-align: top;
+text-align: center;
+text-overflow: ellipsis;
+font-size: 16px;
+line-height: 42px;
+cursor: pointer;
+font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+font-weight: normal;
+text-transform: none;
+outline-offset: 0;
+background-image: none;
+box-sizing: border-box;
+
+  }
+
+  </style>-->
+  
+  <style>
+  .autome {
+    overflow:auto;
+  }
+
+  .hideme {
+    overflow:hidden;
+  }
+
+  .mw {
+    width: 100%;
+  }
+
+  </style>
+
+
   <title>react-jsonschema-form playground</title>
-  <link rel="stylesheet" id="theme" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/1.3.1/css/ionic.css">
+  <!--<link rel="stylesheet" id="theme" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
   <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
 </head>
-<body>
+<body class="autome">
   <div id="app"></div>
   <p style="text-align:center">
     Powered by

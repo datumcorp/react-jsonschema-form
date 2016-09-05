@@ -114,11 +114,11 @@ class AltDateWidget extends Component {
         ))
       }
         <li>
-          <a href="#" className="btn btn-info btn-now"
+          <a href="#" className="button button-outline button-positive"
              onClick={this.setNow}>Now</a>
         </li>
         <li>
-          <a href="#" className="btn btn-warning btn-clear"
+          <a href="#" className="button button-outline button-positive"
              onClick={this.clear}>Clear</a>
         </li>
       </ul>

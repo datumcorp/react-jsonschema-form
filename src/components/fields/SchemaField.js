@@ -41,7 +41,7 @@ function Label(props) {
     return null;
   }
   return (
-    <label className="control-label" htmlFor={id}>
+    <label className="input-label" htmlFor={id}>
       {required ? label + REQUIRED_FIELD_SYMBOL : label}
     </label>
   );
@@ -115,7 +115,6 @@ if (process.env.NODE_ENV !== "production") {
     required: PropTypes.bool,
     readonly: PropTypes.bool,
     displayLabel: PropTypes.bool,
-    formContext: PropTypes.object,
   };
 }
 
@@ -128,7 +127,7 @@ DefaultTemplate.defaultProps = {
 
 function SchemaField(props) {
   const {uiSchema, errorSchema, idSchema, name, required, registry} = props;
-  const {definitions, fields, formContext, FieldTemplate = DefaultTemplate} = registry;
+  const {definitions, fields, FieldTemplate = DefaultTemplate} = registry;
   const schema = retrieveSchema(props.schema, definitions);
   const FieldComponent = getFieldComponent(schema, uiSchema, fields);
   const {DescriptionField} = fields;
@@ -157,8 +156,7 @@ function SchemaField(props) {
     <FieldComponent {...props}
       schema={schema}
       disabled={disabled}
-      readonly={readonly}
-      formContext={formContext} />
+      readonly={readonly} />
   );
 
   const {type} = schema;
@@ -169,7 +167,10 @@ function SchemaField(props) {
   const help = uiSchema["ui:help"];
   const hidden = uiSchema["ui:widget"] === "hidden";
   const classNames = [
-    "form-group",
+    "item",
+    "full",
+    "item-input",
+    "item-stacked-label",
     "field",
     `field-${type}`,
     errors && errors.length > 0 ? "field-error has-error" : "",
@@ -177,9 +178,7 @@ function SchemaField(props) {
   ].join(" ").trim();
 
   const fieldProps = {
-    description: <DescriptionField id={id + "__description"}
-                                   description={description}
-                                   formContext={formContext} />,
+    description: <DescriptionField id={id + "__description"} description={description} />,
     help: <Help help={help} />,
     errors: <ErrorList errors={errors} />,
     id,
@@ -189,7 +188,6 @@ function SchemaField(props) {
     readonly,
     displayLabel,
     classNames,
-    formContext,
   };
 
   return <FieldTemplate {...fieldProps}>{field}</FieldTemplate>;
@@ -219,7 +217,6 @@ if (process.env.NODE_ENV !== "production") {
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
       FieldTemplate: PropTypes.func,
-      formContext: PropTypes.object.isRequired,
     })
   };
 }

@@ -10,13 +10,12 @@ function BaseInput(props) {
     onChange,
     options,  // eslint-disable-line
     schema,   // eslint-disable-line
-    formContext,  // eslint-disable-line
     ...inputProps
   } = props;
   return (
     <input
       {...inputProps}
-      className="form-control"
+      className="text"
       readOnly={readonly}
       value={typeof value === "undefined" ? "" : value}
       onChange={(event) => onChange(event.target.value)} />

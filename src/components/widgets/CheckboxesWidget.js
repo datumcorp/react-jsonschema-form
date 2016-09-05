@@ -22,7 +22,7 @@ function CheckboxesWidget(props) {
         const checked = value.indexOf(option.value) !== -1;
         return (
           <div key={index} className="checkbox">
-            <label>
+            <label className="toggle">
               <input type="checkbox"
                 id={`${id}_${index}`}
                 checked={checked}
@@ -35,6 +35,9 @@ function CheckboxesWidget(props) {
                     onChange(deselectValue(option.value, value));
                   }
                 }} />
+                <div className="track">
+     <div className="handle"></div>
+   </div>
               <strong>{option.label}</strong>
             </label>
           </div>

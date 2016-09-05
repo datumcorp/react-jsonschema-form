@@ -34,7 +34,7 @@ function SelectWidget({
     <select
       id={id}
       multiple={multiple}
-      className="form-control"
+      className="item item-select"
       value={value}
       required={required}
       disabled={disabled}

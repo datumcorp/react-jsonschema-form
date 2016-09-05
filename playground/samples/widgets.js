@@ -115,10 +115,12 @@ module.exports = {
         component: ({value, onChange, options}) => {
           const {backgroundColor} = options;
           return (
-            <input className="form-control"
+            <div>
+			<input className="item item-input"
               onChange={(event) => onChange(event.target.value)}
               style={{backgroundColor}}
               value={value} />
+			</div>
           );
         },
         options: {
@@ -131,7 +133,7 @@ module.exports = {
         component: ({value, onChange, options}) => {
           const {enumOptions, backgroundColor} = options;
           return (
-            <select className="form-control"
+            <select className="item item-select"
               style={{backgroundColor}}
               value={value}
               onChange={(event) => onChange(event.target.value)}>{

@@ -182,7 +182,7 @@ class ArrayField extends Component {
             DescriptionField={DescriptionField}
             idSchema={idSchema}
             description={schema.description} /> : null}
-        <div className="row array-item-list">{
+        <div className="array-item-list">{
           items.map((item, index) => {
             const itemErrorSchema = errorSchema ? errorSchema[index] : undefined;
             const itemIdPrefix = idSchema.$id + "_" + index;
@@ -333,7 +333,7 @@ class ArrayField extends Component {
 
     return (
       <div key={index} className="array-item">
-        <div className={hasToolbar ? "col-xs-10" : "col-xs-12"}>
+        <div className={hasToolbar ? "" : ""}>
           <SchemaField
             schema={itemSchema}
             uiSchema={itemUiSchema}
@@ -348,31 +348,31 @@ class ArrayField extends Component {
         </div>
         {
           hasToolbar ?
-            <div className="col-xs-2 array-item-toolbox text-right">
-              <div className="btn-group" style={{display: "flex"}}>
+            <span className="">
+              <div className="button-bar" style={{display: "flex"}}>
                 {canMoveUp || canMoveDown ?
-                  <button type="button" className="btn btn-default array-item-move-up"
-                          style={btnStyle}
+                  <button type="button" className="balanced button button-block icon ion-arrow-up-b"
+                          
                           tabIndex="-1"
                           disabled={disabled || readonly || !canMoveUp}
-                          onClick={this.onReorderClick(index, index - 1)}>⬆</button>
+                          onClick={this.onReorderClick(index, index - 1)}></button>
                   : null}
                 {canMoveUp || canMoveDown ?
-                  <button type="button" className="btn btn-default array-item-move-down"
-                          style={btnStyle}
+                  <button type="button" className="balanced button button-block icon ion-arrow-down-b"
+                          
                           tabIndex="-1"
                           disabled={disabled || readonly || !canMoveDown}
-                          onClick={this.onReorderClick(index, index + 1)}>⬇</button>
+                          onClick={this.onReorderClick(index, index + 1)}></button>
                   : null}
                 {removable ?
-                  <button type="button" className="btn btn-danger array-item-remove"
-                          style={btnStyle}
+                  <button type="button" className="balanced button button-block icon ion-close-round"
+                          
                           tabIndex="-1"
                           disabled={disabled || readonly}
-                          onClick={this.onDropIndexClick(index)}>✖</button>
+                          onClick={this.onDropIndexClick(index)}></button>
                   : null}
               </div>
-            </div>
+            </span>
           : null
         }
       </div>
@@ -384,9 +384,9 @@ function AddButton({onClick, disabled}) {
   return (
     <div className="row">
       <p className="col-xs-2 col-xs-offset-10 array-item-add text-right">
-        <button type="button" className="btn btn-info col-xs-12"
+        <button type="button" className="balanced button button-block icon ion-plus-round"
                 tabIndex="-1" onClick={onClick}
-                disabled={disabled} style={{fontWeight: "bold"}}>➕</button>
+                disabled={disabled} style={{fontWeight: "bold"}}></button>
       </p>
     </div>
   );
@@ -410,8 +410,7 @@ if (process.env.NODE_ENV !== "production") {
       ])).isRequired,
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
-      formContext: PropTypes.object.isRequired
-    }),
+    })
   };
 }
 
